@@ -1,1 +1,3 @@
-.idea
+.*
+# Add some file to keep empty folder
+!._for_git
