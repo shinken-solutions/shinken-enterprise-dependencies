@@ -1,0 +1,7 @@
+FROM almalinux:8.10-minimal
+
+RUN microdnf install dnf "dnf-command(modulesync)" createrepo_c epel-release && dnf clean all
+
+VOLUME /root/shinken-deps
+
+CMD cd /root/shinken-deps && createrepo --database --update ./ && dnf modulesync
